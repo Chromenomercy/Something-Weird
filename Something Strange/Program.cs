@@ -11,6 +11,7 @@ namespace Something_Strange
         static void Main(string[] args)
         {
             Console.WriteLine("Hello World!");
+            Console.ReadKey();
         }
     }
 }
