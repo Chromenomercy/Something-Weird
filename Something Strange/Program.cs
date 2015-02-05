@@ -10,8 +10,58 @@ namespace Something_Strange
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Welcome to FizzBuzz!\n");
-            for (int i = 1; i <= 100; i++)
+            Console.WriteLine("Welcome to FizzBuzz!");
+            Console.WriteLine("What number should I run fizzbuzz until?");
+
+            int max = ask_for_number();
+            Console.WriteLine();
+            display_numbers(max);
+
+            Console.ReadKey();
+            Shout();
+        }
+        /// <summary>
+        /// Shouts
+        /// </summary>
+        static void Shout()
+        {
+            Console.WriteLine("AHAHAHAHAHAHHAHAHAHA");
+        }
+        /// <summary>
+        /// asks for a number and tries again until the value is above 1 and is a number
+        /// </summary>
+        /// <returns>number that has been asked for</returns>
+        static int ask_for_number()
+        {
+            int max = 100;
+            bool valid_number;
+            do
+            {
+                string input = Console.ReadLine();
+                try
+                {
+                    max = Convert.ToInt16(input);
+                    valid_number = max > 1;
+                }
+                catch
+                {
+                    valid_number = false;
+                }
+                if (!valid_number)
+                {
+                    Console.WriteLine("That is not a valid number. Please enter anothe number.");
+                }
+            }
+            while (!valid_number);
+            return max;
+        }
+        /// <summary>
+        /// displays numbers accounting for 3 being fizz and 5 being buzz
+        /// </summary>
+        /// <param name="max">number to count to</param>
+        static void display_numbers(int max)
+        {
+            for (int i = 1; i <= max; i++)
             {
                 bool multiple_of_3 = i % 3 == 0;
                 bool multiple_of_5 = i % 5 == 0;
@@ -24,15 +74,6 @@ namespace Something_Strange
                 else
                     Console.WriteLine(i);
             }
-            Console.ReadKey();
-            Shout();
-        }
-        /// <summary>
-        /// Shouts
-        /// </summary>
-        static void Shout()
-        {
-            Console.WriteLine("AHAHAHAHAHAHHAHAHAHA");
         }
     }
 }
