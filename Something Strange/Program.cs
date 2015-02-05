@@ -25,6 +25,14 @@ namespace Something_Strange
                     Console.WriteLine(i);
             }
             Console.ReadKey();
+            Shout();
+        }
+        /// <summary>
+        /// Shouts
+        /// </summary>
+        static void Shout()
+        {
+            Console.WriteLine("AHAHAHAHAHAHHAHAHAHA");
         }
     }
 }
