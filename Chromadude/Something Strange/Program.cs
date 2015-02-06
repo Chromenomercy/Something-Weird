@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Something_Strange
+namespace Fizz_Buzz
 {
     class Program
     {
@@ -13,7 +13,7 @@ namespace Something_Strange
             Console.WriteLine("Welcome to FizzBuzz!");
             Console.WriteLine("What number should I run fizzbuzz until?");
 
-            int max = ask_for_number();
+            long max = ask_for_number();
             Console.WriteLine();
             display_numbers(max);
 
@@ -31,16 +31,16 @@ namespace Something_Strange
         /// asks for a number and tries again until the value is above 1 and is a number
         /// </summary>
         /// <returns>number that has been asked for</returns>
-        static int ask_for_number()
+        static long ask_for_number()
         {
-            int value = 100;
+            long value = 100;
             bool valid_number;
             do
             {
                 string input = Console.ReadLine();
                 try
                 {
-                    value = Convert.ToInt16(input);
+                    value = Convert.ToInt64(input);
                     valid_number = value > 1;
                 }
                 catch
@@ -49,7 +49,7 @@ namespace Something_Strange
                 }
                 if (!valid_number)
                 {
-                    Console.WriteLine("That is not a valid number. Please enter anothe number.");
+                    Console.WriteLine("That is not a valid number. Please enter another number.");
                 }
             }
             while (!valid_number);
@@ -59,7 +59,7 @@ namespace Something_Strange
         /// displays numbers accounting for 3 being fizz and 5 being buzz
         /// </summary>
         /// <param name="max">number to count to</param>
-        static void display_numbers(int max)
+        static void display_numbers(long max)
         {
             for (int i = 1; i <= max; i++)
             {

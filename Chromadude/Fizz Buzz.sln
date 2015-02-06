@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Express 2013 for Windows Desktop
 VisualStudioVersion = 12.0.31101.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Something Strange", "Something Strange\Something Strange.csproj", "{3BE061D6-579D-48B7-8AA9-C24CBE8A6C55}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fizz Buzz", "Something Strange\Fizz Buzz.csproj", "{3BE061D6-579D-48B7-8AA9-C24CBE8A6C55}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
