@@ -33,15 +33,15 @@ namespace Something_Strange
         /// <returns>number that has been asked for</returns>
         static int ask_for_number()
         {
-            int max = 100;
+            int value = 100;
             bool valid_number;
             do
             {
                 string input = Console.ReadLine();
                 try
                 {
-                    max = Convert.ToInt16(input);
-                    valid_number = max > 1;
+                    value = Convert.ToInt16(input);
+                    valid_number = value > 1;
                 }
                 catch
                 {
@@ -53,7 +53,7 @@ namespace Something_Strange
                 }
             }
             while (!valid_number);
-            return max;
+            return value;
         }
         /// <summary>
         /// displays numbers accounting for 3 being fizz and 5 being buzz
