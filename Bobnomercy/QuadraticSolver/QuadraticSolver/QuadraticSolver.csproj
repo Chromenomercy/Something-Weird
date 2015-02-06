@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{AD5A9448-01A9-44AB-9773-779AF6911EFE}</ProjectGuid>
+    <ProjectGuid>{5DC5A364-303B-479D-B160-1A2037A1320A}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>QuadraticSolver</RootNamespace>
