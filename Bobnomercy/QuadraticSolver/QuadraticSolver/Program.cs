@@ -16,7 +16,7 @@ namespace ConsoleApplication1
             Console.Write("Enter a: ");
             double a = Convert.ToDouble(Console.ReadLine());
 
-            Console.Write("Enter b: ");
+            Console.Write("Enter b: "); 
             double b = Convert.ToDouble(Console.ReadLine());
 
             Console.Write("Enter c: ");
