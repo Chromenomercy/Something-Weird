@@ -5,6 +5,7 @@ using System.Text;
 using System.Diagnostics;
 using System.Threading.Tasks;
 using System.IO;
+using System.Management;
 
 namespace BasicPerformanceEvaluation
 {
@@ -14,6 +15,10 @@ namespace BasicPerformanceEvaluation
         {
             Console.Write("\nEnter Name: ");
             string name = Console.ReadLine();
+
+            Console.WriteLine(GetCpuManufacturer() + GetCpuCaption());
+            Console.WriteLine(GetCpuCores() + " Cores");
+            Console.WriteLine(GetCpuClockSpeed() + " Hz");
 
             Console.Write("\nEnter how many times to run evaluation, or -1 for an infinate loop: ");
             string setting = Console.ReadLine();
@@ -65,7 +70,7 @@ namespace BasicPerformanceEvaluation
                 for (int i = 0; i < num_iterations; i++)
                 {
                     out1 += out2;
-                    out2 -= out2;
+                    out1 -= out2;
                 }
 
                 total_result += Convert.ToInt64(stop_watch.ElapsedMilliseconds);
@@ -84,14 +89,20 @@ namespace BasicPerformanceEvaluation
                 {
                     newtext.AppendLine(text.ReadToEnd());
                     newtext.AppendLine(Convert.ToString(name + ": " + average_ms));
+                    newtext.AppendLine(GetCpuManufacturer() + GetCpuCaption());
+                    newtext.AppendLine(GetCpuCores() + " Cores");
+                    newtext.AppendLine(GetCpuClockSpeed() + " Hz");
                 }
-                Console.WriteLine("Found TextScores.txt");
+                Console.WriteLine("\nFound TextScores.txt");
             }
 
             catch
             {
-                Console.WriteLine("Creating new file names TestScores.txt");
+                Console.WriteLine("\nCreated new TestScores.txt");
                 newtext.AppendLine(Convert.ToString(name + ": " + average_ms));
+                newtext.AppendLine(GetCpuManufacturer() + GetCpuCaption());
+                newtext.AppendLine(GetCpuCores() + " Cores");
+                newtext.AppendLine(GetCpuClockSpeed() + " Hz");
             }
 
             StreamWriter out_file = new StreamWriter("TestScores.txt");
@@ -101,6 +112,101 @@ namespace BasicPerformanceEvaluation
 
             Console.WriteLine("\nSpeed test result = " + average_ms + "\n");
 
+        }
+
+        public static int GetCpuClockSpeed()
+        {
+            try
+            {
+                ManagementObjectSearcher searcher = new ManagementObjectSearcher("root\\CIMV2",
+                    "SELECT * FROM Win32_Processor");
+
+                foreach (ManagementObject queryObj in searcher.Get())
+                {
+                    return Convert.ToInt32(queryObj["CurrentClockSpeed"]);
+                }
+            }
+            catch
+            {
+                return -1;
+            }
+            return -1;
+        }
+
+        public static string GetCpuManufacturer()
+        {
+            try
+            {
+                ManagementObjectSearcher searcher = new ManagementObjectSearcher("root\\CIMV2",
+                    "SELECT * FROM Win32_Processor");
+
+                foreach (ManagementObject queryObj in searcher.Get())
+                {
+                    return queryObj["Manufacturer"].ToString();
+                }
+            }
+            catch
+            {
+                return null;
+            }
+            return null;
+        }
+
+        public static string GetCpuId()
+        {
+            try
+            {
+                ManagementObjectSearcher searcher = new ManagementObjectSearcher("root\\CIMV2",
+                    "SELECT * FROM Win32_Processor");
+
+                foreach (ManagementObject queryObj in searcher.Get())
+                {
+                    return queryObj["ProcessorId"].ToString();
+                }
+            }
+            catch
+            {
+                return null;
+            }
+            return null;
+        }
+
+        public static int GetCpuCores()
+        {
+            try
+            {
+                ManagementObjectSearcher searcher = new ManagementObjectSearcher("root\\CIMV2",
+                    "SELECT * FROM Win32_Processor");
+
+                foreach (ManagementObject queryObj in searcher.Get())
+                {
+                    return Convert.ToInt32(queryObj["NumberOfCores"]);
+                }
+            }
+            catch
+            {
+                return -1;
+            }
+            return -1;
+        }
+
+        public static string GetCpuCaption()
+        {
+            try
+            {
+                ManagementObjectSearcher searcher = new ManagementObjectSearcher("root\\CIMV2",
+                    "SELECT * FROM Win32_Processor");
+
+                foreach (ManagementObject queryObj in searcher.Get())
+                {
+                    return queryObj["Caption"].ToString();
+                }
+            }
+            catch
+            {
+                return null;
+            }
+            return null;
         }
     }
 }
