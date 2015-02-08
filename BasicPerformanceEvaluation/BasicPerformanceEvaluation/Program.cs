@@ -21,7 +21,7 @@ namespace BasicPerformanceEvaluation
             Console.WriteLine(GetCpuClockSpeed() + " Hz");
 
             Console.Write("\nEnter how many times to run evaluation, or -1 for an infinate loop: ");
-            string setting = Console.ReadLine();
+            string setting = Console.ReadLine(); 
             if (setting == "-1"){
 
                 while (true)
