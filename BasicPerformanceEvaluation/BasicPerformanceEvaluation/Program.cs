@@ -25,7 +25,7 @@ namespace BasicPerformanceEvaluation
         {
             Stopwatch stop_watch = new Stopwatch();
             long num_iterations = 100000000;
-            int num_tests = 12;
+            int num_tests = 30;
             long total_result = 0;
             long out1 = 3 * 10 ^ 100000;
             long out2 = 3 * 10 ^ 100000;
@@ -33,7 +33,7 @@ namespace BasicPerformanceEvaluation
 
             for (int test = 0; test < num_tests; test++) {
 
-                Console.WriteLine("Beginning test " + (test + 1));
+                Console.WriteLine("(running test " + (test + 1) + ")");
 
                 stop_watch.Start();
 
@@ -49,7 +49,7 @@ namespace BasicPerformanceEvaluation
 
             long average_ms = total_result / num_tests;
 
-            Console.WriteLine("Speed test result = " + average_ms);
+            Console.WriteLine("\nSpeed test result = " + average_ms);
 
         }
     }
