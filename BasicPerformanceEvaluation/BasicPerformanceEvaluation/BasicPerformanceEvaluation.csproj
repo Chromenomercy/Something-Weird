@@ -65,10 +65,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <None Include="bin\Debug\BasicPerformanceEvaluation.exe.config" />
-    <None Include="bin\Debug\BasicPerformanceEvaluation.exe.lastcodeanalysissucceeded" />
-    <None Include="bin\Debug\BasicPerformanceEvaluation.vshost.exe.config" />
-    <None Include="bin\Debug\BasicPerformanceEvaluation.vshost.exe.manifest" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.0">
@@ -94,10 +90,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="bin\Debug\BasicPerformanceEvaluation.exe" />
-    <Content Include="bin\Debug\BasicPerformanceEvaluation.exe.CodeAnalysisLog.xml" />
-    <Content Include="bin\Debug\BasicPerformanceEvaluation.pdb" />
-    <Content Include="bin\Debug\BasicPerformanceEvaluation.vshost.exe" />
-    <Content Include="bin\Debug\TestScores.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
