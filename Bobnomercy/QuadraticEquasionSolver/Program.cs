@@ -38,7 +38,7 @@ namespace ConsoleApplication1
             Console.WriteLine("\n\n(" + stopWatch.ElapsedMilliseconds * 0.001 + "seconds)");
 
             Console.ReadKey();
-        }
+        } 
 
         public static string Solve_X(double a, double b, double c)
         {
