@@ -46,10 +46,13 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="bin\Debug\QuadraticEquasionSolver.exe.config" />
     <None Include="bin\Debug\QuadraticEquasionSolver.vshost.exe.config" />
     <None Include="bin\Debug\QuadraticEquasionSolver.vshost.exe.manifest" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="bin\Debug\QuadraticEquasionSolver.exe" />
+    <Content Include="bin\Debug\QuadraticEquasionSolver.pdb" />
     <Content Include="bin\Debug\QuadraticEquasionSolver.vshost.exe" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -65,6 +65,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="bin\Debug\BasicPerformanceEvaluation.exe.config" />
     <None Include="bin\Debug\BasicPerformanceEvaluation.vshost.exe.config" />
     <None Include="bin\Debug\BasicPerformanceEvaluation.vshost.exe.manifest" />
   </ItemGroup>
@@ -92,6 +93,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="bin\Debug\BasicPerformanceEvaluation.exe" />
+    <Content Include="bin\Debug\BasicPerformanceEvaluation.pdb" />
     <Content Include="bin\Debug\BasicPerformanceEvaluation.vshost.exe" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
